@@ -1,6 +1,6 @@
 //Maya ASCII 2025ff03 scene
 //Name: ParkSceneProject.ma
-//Last modified: Tue, Oct 01, 2024 01:49:35 PM
+//Last modified: Tue, Oct 01, 2024 01:56:56 PM
 //Codeset: 1252
 requires maya "2025ff03";
 requires "mtoa" "5.4.2.1";
@@ -10,18 +10,18 @@ fileInfo "product" "Maya 2025";
 fileInfo "version" "2025";
 fileInfo "cutIdentifier" "202407121012-8ed02f4c99";
 fileInfo "osv" "Windows 10 Pro v2009 (Build: 19045)";
-fileInfo "UUID" "76FC2C76-4C7C-3752-B98D-E99A1AC82AB4";
+fileInfo "UUID" "85D7E81D-4B23-411D-B7A6-8282C9D3291C";
 createNode transform -s -n "persp";
 	rename -uid "63665CC3-42E8-E929-0AED-C9B1A872DC4D";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 20.861807405844598 12.585841226016665 9.307204426825983 ;
-	setAttr ".r" -type "double3" -25.800000000000328 61.200000000000394 3.3010175660767547e-15 ;
+	setAttr ".t" -type "double3" 16.444841520111396 14.526566931487578 14.953746281316031 ;
+	setAttr ".r" -type "double3" -31.200000000000401 41.200000000000379 0 ;
 	setAttr ".rpt" -type "double3" -7.1379244146390897e-17 7.1635512837297927e-17 5.1058056352928934e-17 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "EF24454A-4E60-159F-F3BE-BD8ED15DB738";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 23.188677200378969;
+	setAttr ".coi" 23.188677200379296;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -6266,8 +6266,8 @@ createNode mesh -n "leafShape5" -p "leaf5";
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "leaf4" -p "Tree_leaves";
 	rename -uid "34A48FB2-489A-ED40-4F0F-D58552E4EFA4";
-	setAttr ".t" -type "double3" 2.0713628959814661 7.1896359564321743 1.1656933508988807 ;
-	setAttr ".r" -type "double3" 17.399827915160365 4.3840875610578536 -14.771649966966264 ;
+	setAttr ".t" -type "double3" 0.67711363477316799 7.2436519162547217 0.73445115000438466 ;
+	setAttr ".r" -type "double3" 17.878842780124828 -1.3359562117087025 3.0706483031709553 ;
 createNode mesh -n "leafShape4" -p "leaf4";
 	rename -uid "19219869-47FD-9887-5E74-DF8F562E598E";
 	setAttr -k off ".v";
@@ -6413,8 +6413,8 @@ createNode mesh -n "leafShape2" -p "leaf2";
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "leaf1" -p "Tree_leaves";
 	rename -uid "5B265E8F-47F6-6088-8DF7-C8AE7416134F";
-	setAttr ".t" -type "double3" 1.2709803869026908 4.3474919994458201 -0.41260958877016124 ;
-	setAttr ".r" -type "double3" 9.5320722654936922 -0.47632155457472286 -44.321351268534777 ;
+	setAttr ".t" -type "double3" 1.3961981106045556 4.5447886689235055 -0.37461673698952969 ;
+	setAttr ".r" -type "double3" 9.2428031235819095 -2.3885894922053934 -32.79053631895696 ;
 createNode mesh -n "leafShape1" -p "leaf1";
 	rename -uid "72AEBF54-478F-CA06-7C11-6BA6D7635597";
 	setAttr -k off ".v";
@@ -6462,8 +6462,8 @@ createNode mesh -n "leafShape1" -p "leaf1";
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "leaf" -p "Tree_leaves";
 	rename -uid "2254A0BC-49D7-F24A-FD0C-50AAED7FF6CF";
-	setAttr ".t" -type "double3" 2.1151085956255153 5.4012338205300425 2.1271671655741997 ;
-	setAttr ".r" -type "double3" 48.882974649834765 16.937378100982979 -14.267491113546193 ;
+	setAttr ".t" -type "double3" 1.4404903542064147 5.5471020509197837 2.3074157845912335 ;
+	setAttr ".r" -type "double3" 50.662185231983358 7.0676050804486428 -5.7584156173358112 ;
 createNode mesh -n "leafShape" -p "leaf";
 	rename -uid "1045CB63-4E50-19C4-CC21-76A40E16BBD9";
 	setAttr -k off ".v";
