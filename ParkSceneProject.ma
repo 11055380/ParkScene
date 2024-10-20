@@ -1,11 +1,11 @@
 //Maya ASCII 2025ff03 scene
 //Name: ParkSceneProject.ma
-//Last modified: Wed, Oct 09, 2024 05:04:48 PM
+//Last modified: Sun, Oct 20, 2024 04:11:41 PM
 //Codeset: 1252
 requires maya "2025ff03";
 requires "stereoCamera" "10.0";
-requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" -nodeType "aiImagerDenoiserOidn"
-		 "mtoa" "5.4.2.1";
+requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" -nodeType "aiSkyDomeLight"
+		 -nodeType "aiImagerDenoiserOidn" "mtoa" "5.4.2.1";
 requires "stereoCamera" "10.0";
 currentUnit -l centimeter -a degree -t film;
 fileInfo "application" "maya";
@@ -13,18 +13,18 @@ fileInfo "product" "Maya 2025";
 fileInfo "version" "2025";
 fileInfo "cutIdentifier" "202407121012-8ed02f4c99";
 fileInfo "osv" "Windows 10 Pro v2009 (Build: 19045)";
-fileInfo "UUID" "8E495C9B-4D98-C6E5-DE98-DF8D92AF768A";
+fileInfo "UUID" "E4AFEA9F-44A8-871E-6748-FAA282BE738D";
 createNode transform -s -n "persp";
 	rename -uid "63665CC3-42E8-E929-0AED-C9B1A872DC4D";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 14.001930797235351 12.695264517830717 9.2323081643633298 ;
-	setAttr ".r" -type "double3" 325.79999999993731 -312.40000000000214 -2.3584038407905533e-15 ;
+	setAttr ".t" -type "double3" 34.70149619177927 29.675384995408834 24.080797715813169 ;
+	setAttr ".r" -type "double3" 325.79999999993731 -305.60000000000173 0 ;
 	setAttr ".rpt" -type "double3" 3.8472651086218976e-17 7.9555499310448436e-16 -1.1720243788801146e-16 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "EF24454A-4E60-159F-F3BE-BD8ED15DB738";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 23.050853832595202;
+	setAttr ".coi" 53.553622793463951;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -198,7 +198,7 @@ createNode mesh -n "grass_groundShape" -p "grass_ground";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 96 ".pt";
+	setAttr -s 84 ".pt";
 	setAttr ".pt[0]" -type "float3" 0.040006597 -0.08787284 -0.015423597 ;
 	setAttr ".pt[1]" -type "float3" -0.00099260267 -0.087872364 0.019010048 ;
 	setAttr ".pt[2]" -type "float3" 0 -0.087871723 0 ;
@@ -27127,7 +27127,7 @@ createNode mesh -n "treeShape4" -p "tree4";
 	setAttr ".gtag[9].gtagcmp" -type "componentList" 7 "e[0:11]" "e[526:527]" "e[552:553]" "e[578:579]" "e[604:605]" "e[630:631]" "e[656:657]";
 	setAttr ".pv" -type "double2" 0.49255861341953278 0.73841014504432678 ;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
-	setAttr -s 2094 ".uvst[0].uvsp";
+	setAttr -s 2111 ".uvst[0].uvsp";
 	setAttr ".uvst[0].uvsp[0:249]" -type "float2" 0.375 0.3125 0.625 0.3125 0.41666666
 		 0.3125 0.45833331 0.3125 0.49999997 0.3125 0.54166663 0.3125 0.58333331 0.3125 0.375
 		 0.6875 0.578125 0.97906649 0.625 0.6875 0.41666666 0.6875 0.421875 0.97906649 0.45833331
@@ -27600,7 +27600,7 @@ createNode mesh -n "treeShape4" -p "tree4";
 		 0.56434989 0.72103518 0.56293052 0.72257215 0.56585366 0.7226395 0.45750806 0.71338171
 		 0.4591071 0.71601462 0.45932442 0.71592772 0.45796779 0.71336251 0.39537856 0.75673193
 		 0.40467143 0.73958552 0.40260527 0.74630094 0.40446815 0.74169624;
-	setAttr ".uvst[0].uvsp[2000:2093]" 0.57307363 0.72002125 0.58671331 0.73485327
+	setAttr ".uvst[0].uvsp[2000:2110]" 0.57307363 0.72002125 0.58671331 0.73485327
 		 0.57320917 0.72273803 0.577447 0.7277509 0.40530938 0.73712599 0.40530935 0.73712605
 		 0.4122037 0.72995287 0.38726097 0.76838684 0.59785628 0.74260902 0.59785628 0.74260902
 		 0.57178533 0.71697742 0.40530938 0.73712599 0.4053095 0.73712587 0.42599237 0.71560669
@@ -27623,12 +27623,17 @@ createNode mesh -n "treeShape4" -p "tree4";
 		 0.49296796 0.70843345 0.45728707 0.71082455 0.4122037 0.72995287 0.42873725 0.72038871
 		 0.40530935 0.73712605 0.42873725 0.72038871 0.4122037 0.72995287 0.53192639 0.71128148
 		 0.55886859 0.71412945 0.57178533 0.71697736 0.49296796 0.70843345 0.53192639 0.71128148
-		 0.49296796 0.70843345 0.55886859 0.71412945 0.45728707 0.71082455 0.45728707 0.71082455;
+		 0.49296796 0.70843345 0.55886859 0.71412945 0.45728707 0.71082455 0.45728707 0.71082455
+		 0.4122037 0.72995287 0.4122037 0.72995287 0.40530935 0.73712605 0.4122037 0.72995287
+		 0.4122037 0.72995287 0.40530935 0.73712605 0.53192639 0.71128148 0.57178533 0.71697736
+		 0.55886859 0.71412945 0.49296796 0.70843345 0.49296796 0.70843345 0.55886859 0.71412945
+		 0.53192639 0.71128148 0.45728707 0.71082455 0.42873725 0.72038871 0.42873725 0.72038871
+		 0.45728707 0.71082455;
 	setAttr ".cuvs" -type "string" "map1";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 294 ".pt";
+	setAttr -s 244 ".pt";
 	setAttr ".pt[233]" -type "float3" 0 -2.910383e-11 0 ;
 	setAttr ".pt[244]" -type "float3" 0 2.3283064e-10 0 ;
 	setAttr ".pt[253]" -type "float3" 0 -1.4901161e-08 0 ;
@@ -32935,33 +32940,33 @@ createNode mesh -n "treeShape4" -p "tree4";
 		f 4 -3908 -3906 -3904 -3880
 		mu 0 4 2045 2051 2050 2044
 		f 4 3728 3909 -3911 -3909
-		mu 0 4 1965 2052 1958 2053
+		mu 0 4 1965 2052 2094 2053
 		f 4 3730 3909 -3913 -3912
-		mu 0 4 1958 2055 2005 2054
+		mu 0 4 2095 2055 2096 2054
 		f 4 3731 3914 -3916 -3914
-		mu 0 4 2021 2056 2006 2057
+		mu 0 4 2021 2056 2097 2057
 		f 4 3732 3914 -3917 -3912
-		mu 0 4 2006 2059 2005 2058
+		mu 0 4 2098 2059 2099 2058
 		f 4 3733 3918 -3920 -3918
-		mu 0 4 1942 2060 1959 2061
+		mu 0 4 1942 2060 2100 2061
 		f 4 3735 3920 -3922 -3918
-		mu 0 4 1939 2063 1942 2062
+		mu 0 4 2101 2063 2102 2062
 		f 4 3736 3922 -3924 -3919
-		mu 0 4 1959 2064 1961 2065
+		mu 0 4 1959 2064 2103 2065
 		f 4 3737 3925 -3927 -3925
-		mu 0 4 2023 2066 2029 2067
+		mu 0 4 2023 2066 2104 2067
 		f 4 3738 3927 -3929 -3921
-		mu 0 4 1939 2068 2025 2069
+		mu 0 4 1939 2068 2105 2069
 		f 4 3739 3924 -3930 -3928
-		mu 0 4 2025 2070 2023 2071
+		mu 0 4 2025 2070 2106 2071
 		f 4 3740 3930 -3932 -3923
-		mu 0 4 1961 2072 1963 2073
+		mu 0 4 1961 2072 2107 2073
 		f 4 3741 3908 -3933 -3931
-		mu 0 4 1963 2074 1965 2075
+		mu 0 4 1963 2074 2108 2075
 		f 4 3742 3913 -3935 -3934
-		mu 0 4 2027 2076 2021 2077
+		mu 0 4 2027 2076 2109 2077
 		f 4 3743 3933 -3936 -3926
-		mu 0 4 2029 2078 2027 2079
+		mu 0 4 2029 2078 2110 2079
 		f 4 -3729 3936 3938 -3938
 		mu 0 4 1958 1965 2081 2080
 		f 4 3730 3937 -3943 -3941
@@ -62586,7 +62591,6 @@ createNode mesh -n "grass_stem16Shape" -p "grass_stem16";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
-	setAttr -s 4 ".ciog[0].cog";
 	setAttr -s 8 ".gtag";
 	setAttr ".gtag[0].gtagnm" -type "string" "bottom";
 	setAttr ".gtag[0].gtagcmp" -type "componentList" 4 "f[0:19]" "f[120:139]" "f[240:259]" "f[360:379]";
@@ -63965,7 +63969,6 @@ createNode mesh -n "grass_stem15Shape" -p "grass_stem15";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
-	setAttr -s 3 ".ciog[0].cog";
 	setAttr -s 8 ".gtag";
 	setAttr ".gtag[0].gtagnm" -type "string" "bottom";
 	setAttr ".gtag[0].gtagcmp" -type "componentList" 4 "f[0:19]" "f[120:139]" "f[240:259]" "f[360:379]";
@@ -65344,7 +65347,6 @@ createNode mesh -n "grass_stem14Shape" -p "grass_stem14";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
-	setAttr -s 3 ".ciog[0].cog";
 	setAttr -s 8 ".gtag";
 	setAttr ".gtag[0].gtagnm" -type "string" "bottom";
 	setAttr ".gtag[0].gtagcmp" -type "componentList" 4 "f[0:19]" "f[120:139]" "f[240:259]" "f[360:379]";
@@ -66721,7 +66723,6 @@ createNode mesh -n "grass_stem13Shape" -p "grass_stem13";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
-	setAttr -s 2 ".ciog[0].cog";
 	setAttr -s 8 ".gtag";
 	setAttr ".gtag[0].gtagnm" -type "string" "bottom";
 	setAttr ".gtag[0].gtagcmp" -type "componentList" 4 "f[0:19]" "f[120:139]" "f[240:259]" "f[360:379]";
@@ -70698,16 +70699,53 @@ createNode mesh -n "pPlaneShape1" -p "pPlane1";
 		-0.05580999 0.35702837 1.5206589 -0.085669935 0.19259642 1.4767846 -0.20798218 0.17557387 
 		1.2180364 -0.0098441839 0.17557417 1.403185 -0.069977641 0.17557466 1.4584674 -0.072827697 
 		0.17557485 1.5200304 -0.062764406 0.17557386 1.4390584 -0.26771843 0.17557381 1.4576715;
+createNode transform -n "aiSkyDomeLight1";
+	rename -uid "C6A698CE-4F60-73E6-0E84-BE8B879CC0A6";
+createNode aiSkyDomeLight -n "aiSkyDomeLightShape1" -p "aiSkyDomeLight1";
+	rename -uid "AF1EC704-4A93-1AFA-321E-DEB820B315D5";
+	setAttr -k off ".v";
+	setAttr ".intensity" 1.4743589162826538;
+createNode transform -n "camera1";
+	rename -uid "81D0A34A-42BB-3047-B1B0-B081E02720BE";
+	setAttr ".t" -type "double3" 17.468031108267184 12.365211005476635 11.403049604817713 ;
+	setAttr ".r" -type "double3" -27.000000000000025 47.20000000000001 0 ;
+createNode camera -n "cameraShape1" -p "camera1";
+	rename -uid "FA351C42-48A8-EA76-FC84-36BDAD5DAFC2";
+	setAttr -k off ".v";
+	setAttr ".rnd" no;
+	setAttr ".cap" -type "double2" 1.41732 0.94488 ;
+	setAttr ".ff" 0;
+	setAttr ".coi" 26.963742088940208;
+	setAttr ".ow" 30;
+	setAttr ".imn" -type "string" "camera1";
+	setAttr ".den" -type "string" "camera1_depth";
+	setAttr ".man" -type "string" "camera1_mask";
+createNode transform -n "pPlane2";
+	rename -uid "1C8EA655-4046-0234-016E-8FB2AF1E1282";
+	setAttr ".t" -type "double3" -0.33884515188431585 0 -1.9534226898262528 ;
+createNode mesh -n "pPlaneShape2" -p "pPlane2";
+	rename -uid "1B43B75E-4156-24C5-6CD8-85BFEA98EFC6";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".pv" -type "double2" 0 0.5 ;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 4 ".pt[0:3]" -type "float3"  -53.026649 0 0 7.0922823 
+		0 0 -53.026649 0 -41.72086 7.0922823 0 -41.72086;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "A2A37BA3-4CC6-343B-EEA9-D9BBAA355BC5";
+	rename -uid "ABE14E1F-4911-751E-6F96-649407CF2C5D";
 	setAttr -s 15 ".lnk";
 	setAttr -s 15 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "071D4C5E-4C1D-9D54-B407-33B3112BC26F";
+	rename -uid "C7DF16CE-4AFB-AC17-5EE5-258390E3D7CF";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "EB8168C4-4014-F7DD-05CB-76A35C6C29BA";
+	rename -uid "B523E892-4F1A-0294-D87D-AAB38BEF5E30";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "8276DBD3-400C-9C6E-1763-F2856241EF35";
+	rename -uid "D3A99F1D-4AAC-9812-8DAD-77A6CB98B591";
 	setAttr ".cdl" 1;
 	setAttr -s 2 ".dli[1]"  1;
 	setAttr -s 2 ".dli";
@@ -70715,7 +70753,7 @@ createNode displayLayer -n "defaultLayer";
 	rename -uid "E1ABAA7F-4BC3-076D-363C-2DAE335023F1";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "479F97CB-417A-1DA6-47AE-91A9EE7A2F8E";
+	rename -uid "6FFD7C40-42FC-ED4A-5C74-8A9FFB77ECA5";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "11FABC24-425B-C86F-F5CF-75A0D8591EB0";
 	setAttr ".g" yes;
@@ -70775,7 +70813,9 @@ createNode groupId -n "groupId6";
 	setAttr ".ihi" 0;
 createNode aiOptions -s -n "defaultArnoldRenderOptions";
 	rename -uid "30243A5B-41DF-5EBF-1EE0-9296AE8155D9";
+	addAttr -ci true -sn "ARV_options" -ln "ARV_options" -dt "string";
 	setAttr ".version" -type "string" "5.4.2.1";
+	setAttr ".ARV_options" -type "string" "Test Resolution=100%;Camera=cameraShape1;Snapshots Folder=C:/Users/Gail/Documents/maya/projects/default/images/snapshots/ParkSceneProject;Color Management.Gamma=1;Color Management.Exposure=0;Background.BG=BG Color;Background.Color=0 0 0;Background.Image=;Background.Scale=1 1;Background.Offset=0 0;Background.Apply Color Management=1;Foreground.Enable FG=0;Foreground.Image=;Foreground.Scale=1 1;Foreground.Offset=0 0;Foreground.Apply Color Management=1;";
 createNode aiAOVFilter -s -n "defaultArnoldFilter";
 	rename -uid "A999358E-4284-9847-365C-4599EA83B0DA";
 	setAttr ".ai_translator" -type "string" "gaussian";
@@ -71069,6 +71109,13 @@ createNode polyTweak -n "polyTweak1";
 		 0 0.27184334 0.084004216 0 0.25853795 0.084004216 0 0.25853795 0.15978557 0 0.21992581
 		 0.15978557 0 0.21992581 0.2199259 0 0.15978539 0.2199259 0 0.15978539 0.25853825
 		 0 0.084004328 0.25853825 0 0.084004328 0.27184328 0 0 0.27184328 0 0;
+createNode polyPlane -n "polyPlane2";
+	rename -uid "EBAB6987-46A1-1C45-3E6D-C8B04FAD14A0";
+	setAttr ".w" 26.809860053424213;
+	setAttr ".h" 28.7501519231249;
+	setAttr ".sw" 1;
+	setAttr ".sh" 1;
+	setAttr ".cuv" 2;
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -71087,6 +71134,7 @@ select -ne :defaultShaderList1;
 select -ne :postProcessList1;
 	setAttr -s 2 ".p";
 select -ne :defaultRenderingList1;
+select -ne :lightList1;
 select -ne :standardSurface1;
 	setAttr ".bc" -type "float3" 0.40000001 0.40000001 0.40000001 ;
 	setAttr ".sr" 0.5;
@@ -71100,6 +71148,7 @@ select -ne :defaultRenderGlobals;
 	setAttr ".dss" -type "string" "standardSurface1";
 select -ne :defaultResolution;
 	setAttr ".pa" 1;
+select -ne :defaultLightSet;
 select -ne :defaultColorMgtGlobals;
 	setAttr ".cfe" yes;
 	setAttr ".cfp" -type "string" "<MAYA_RESOURCES>/OCIO-configs/Maya2022-default/config.ocio";
@@ -71112,13 +71161,12 @@ select -ne :defaultColorMgtGlobals;
 select -ne :hardwareRenderGlobals;
 	setAttr ".ctrs" 256;
 	setAttr ".btrs" 512;
-select -ne :ikSystem;
-	setAttr -s 4 ".sol";
 connectAttr "polyBevel1.out" "lamp_baseShape.i";
 connectAttr "groupId31.id" "leaf_clusterShape.iog.og[2].gid";
 connectAttr "grassSG.mwc" "leaf_clusterShape.iog.og[2].gco";
 connectAttr "groupId26.id" "leaf_clusterShape.ciog.cog[2].cgid";
 connectAttr "polyPlane1.out" "pPlaneShape1.i";
+connectAttr "polyPlane2.out" "pPlaneShape2.i";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" "lambert2SG.message" ":defaultLightSet.message";
@@ -71358,4 +71406,7 @@ connectAttr "mushroom_stem3.msg" ":defaultShaderList1.s" -na;
 connectAttr "leaves.msg" ":defaultShaderList1.s" -na;
 connectAttr "mushroom_cap_dot.msg" ":defaultShaderList1.s" -na;
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
+connectAttr "aiSkyDomeLightShape1.ltd" ":lightList1.l" -na;
+connectAttr "pPlaneShape2.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "aiSkyDomeLight1.iog" ":defaultLightSet.dsm" -na;
 // End of ParkSceneProject.ma
