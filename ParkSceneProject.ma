@@ -1,6 +1,6 @@
 //Maya ASCII 2025ff03 scene
 //Name: ParkSceneProject.ma
-//Last modified: Sun, Oct 20, 2024 04:11:41 PM
+//Last modified: Sun, Oct 20, 2024 04:25:24 PM
 //Codeset: 1252
 requires maya "2025ff03";
 requires "stereoCamera" "10.0";
@@ -13,18 +13,18 @@ fileInfo "product" "Maya 2025";
 fileInfo "version" "2025";
 fileInfo "cutIdentifier" "202407121012-8ed02f4c99";
 fileInfo "osv" "Windows 10 Pro v2009 (Build: 19045)";
-fileInfo "UUID" "E4AFEA9F-44A8-871E-6748-FAA282BE738D";
+fileInfo "UUID" "AA62B54C-44EB-6736-D618-F4ACF54C0AAB";
 createNode transform -s -n "persp";
 	rename -uid "63665CC3-42E8-E929-0AED-C9B1A872DC4D";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 34.70149619177927 29.675384995408834 24.080797715813169 ;
-	setAttr ".r" -type "double3" 325.79999999993731 -305.60000000000173 0 ;
+	setAttr ".t" -type "double3" 4.7524921317863864 14.185919543545555 5.1797345880782961 ;
+	setAttr ".r" -type "double3" 323.99999999985249 -339.59999999999957 8.4834519310131282e-16 ;
 	setAttr ".rpt" -type "double3" 3.8472651086218976e-17 7.9555499310448436e-16 -1.1720243788801146e-16 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "EF24454A-4E60-159F-F3BE-BD8ED15DB738";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 53.553622793463951;
+	setAttr ".coi" 16.057347108992786;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -70701,10 +70701,11 @@ createNode mesh -n "pPlaneShape1" -p "pPlane1";
 		0.17557485 1.5200304 -0.062764406 0.17557386 1.4390584 -0.26771843 0.17557381 1.4576715;
 createNode transform -n "aiSkyDomeLight1";
 	rename -uid "C6A698CE-4F60-73E6-0E84-BE8B879CC0A6";
+	setAttr ".r" -type "double3" -31.880399140437103 12.066040728908005 14.785826092308092 ;
 createNode aiSkyDomeLight -n "aiSkyDomeLightShape1" -p "aiSkyDomeLight1";
 	rename -uid "AF1EC704-4A93-1AFA-321E-DEB820B315D5";
 	setAttr -k off ".v";
-	setAttr ".intensity" 1.4743589162826538;
+	setAttr ".intensity" 1.5384615659713745;
 createNode transform -n "camera1";
 	rename -uid "81D0A34A-42BB-3047-B1B0-B081E02720BE";
 	setAttr ".t" -type "double3" 17.468031108267184 12.365211005476635 11.403049604817713 ;
@@ -70736,10 +70737,35 @@ createNode mesh -n "pPlaneShape2" -p "pPlane2";
 	setAttr ".cdvm[0]"  0 1 1;
 	setAttr -s 4 ".pt[0:3]" -type "float3"  -53.026649 0 0 7.0922823 
 		0 0 -53.026649 0 -41.72086 7.0922823 0 -41.72086;
+createNode transform -n "areaLight1";
+	rename -uid "EA4A3508-4F00-63D6-2780-27BE65920CCD";
+	setAttr ".t" -type "double3" 2.6377708263247257 5.4378122367605304 -5.0682056057341676 ;
+	setAttr ".r" -type "double3" 11.908213712613042 -60.525728516355954 0.79114811030397536 ;
+	setAttr ".s" -type "double3" 0.65303509828603878 0.65303509828603878 1 ;
+createNode areaLight -n "areaLightShape1" -p "areaLight1";
+	rename -uid "CE7EDF00-4BAC-E687-4DD7-8AA650568200";
+	setAttr -k off ".v";
+	setAttr ".in" 13.333333015441895;
+createNode transform -n "group";
+	rename -uid "F408B052-4571-C34F-EFBD-F789D8337459";
+	setAttr ".t" -type "double3" 0.89841034728976676 0.95216804524234977 0.10479739555680648 ;
+	setAttr ".r" -type "double3" -141.30695772467956 53.394284003243463 -104.73535964551778 ;
+	setAttr ".rp" -type "double3" 2.6377708263247257 5.4378122367605304 -5.0682056057341676 ;
+	setAttr ".rpt" -type "double3" -5.3290705182007514e-14 -1.0658141036401503e-14 6.7057470687359455e-14 ;
+	setAttr ".sp" -type "double3" 2.6377708263247257 5.4378122367605304 -5.0682056057341676 ;
+createNode transform -n "pasted__areaLight1" -p "group";
+	rename -uid "DC0DB6FD-4E75-F356-CC4C-B194788AA8CB";
+	setAttr ".t" -type "double3" 2.9926425639402456 5.226943333320162 -5.2671073577721863 ;
+	setAttr ".r" -type "double3" 11.908213712613042 -60.525728516355954 0.79114811030397536 ;
+	setAttr ".s" -type "double3" 0.20815234399137952 0.20815234399137952 1 ;
+createNode areaLight -n "pasted__areaLightShape1" -p "pasted__areaLight1";
+	rename -uid "4F684E04-4F37-0EF8-4285-57BF18C3A0C8";
+	setAttr -k off ".v";
+	setAttr ".in" 2.8205127716064453;
 createNode lightLinker -s -n "lightLinker1";
 	rename -uid "ABE14E1F-4911-751E-6F96-649407CF2C5D";
-	setAttr -s 15 ".lnk";
-	setAttr -s 15 ".slnk";
+	setAttr -s 16 ".lnk";
+	setAttr -s 16 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
 	rename -uid "C7DF16CE-4AFB-AC17-5EE5-258390E3D7CF";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
@@ -70973,63 +70999,6 @@ createNode shadingEngine -n "mushroom_cap_dotSG";
 	setAttr ".ro" yes;
 createNode materialInfo -n "materialInfo12";
 	rename -uid "10B73E7B-4E93-C900-97D1-AB8FDBAC8F37";
-createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo";
-	rename -uid "EB5FB3A8-4460-D7FF-2BF2-FF95A0A0372B";
-	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
-	setAttr ".tgi[0].vl" -type "double2" -113.16508296678046 -416.6666501098216 ;
-	setAttr ".tgi[0].vh" -type "double2" 177.4507946980101 46.428569583665833 ;
-	setAttr -s 17 ".tgi[0].ni";
-	setAttr ".tgi[0].ni[0].x" -62.857143402099609;
-	setAttr ".tgi[0].ni[0].y" -42.857143402099609;
-	setAttr ".tgi[0].ni[0].nvs" 1923;
-	setAttr ".tgi[0].ni[1].x" 90;
-	setAttr ".tgi[0].ni[1].y" -42.857143402099609;
-	setAttr ".tgi[0].ni[1].nvs" 1923;
-	setAttr ".tgi[0].ni[2].x" -84.285713195800781;
-	setAttr ".tgi[0].ni[2].y" 147.14285278320312;
-	setAttr ".tgi[0].ni[2].nvs" 2387;
-	setAttr ".tgi[0].ni[3].x" -217.14285278320312;
-	setAttr ".tgi[0].ni[3].y" -42.857143402099609;
-	setAttr ".tgi[0].ni[3].nvs" 1923;
-	setAttr ".tgi[0].ni[4].x" -60;
-	setAttr ".tgi[0].ni[4].y" -45.714286804199219;
-	setAttr ".tgi[0].ni[4].nvs" 1923;
-	setAttr ".tgi[0].ni[5].x" 111.42857360839844;
-	setAttr ".tgi[0].ni[5].y" 147.14285278320312;
-	setAttr ".tgi[0].ni[5].nvs" 1923;
-	setAttr ".tgi[0].ni[6].x" 90;
-	setAttr ".tgi[0].ni[6].y" -42.857143402099609;
-	setAttr ".tgi[0].ni[6].nvs" 1923;
-	setAttr ".tgi[0].ni[7].x" -62.857143402099609;
-	setAttr ".tgi[0].ni[7].y" -42.857143402099609;
-	setAttr ".tgi[0].ni[7].nvs" 1923;
-	setAttr ".tgi[0].ni[8].x" -217.14285278320312;
-	setAttr ".tgi[0].ni[8].y" -42.857143402099609;
-	setAttr ".tgi[0].ni[8].nvs" 1923;
-	setAttr ".tgi[0].ni[9].x" -84.285713195800781;
-	setAttr ".tgi[0].ni[9].y" 147.14285278320312;
-	setAttr ".tgi[0].ni[9].nvs" 2387;
-	setAttr ".tgi[0].ni[10].x" 90;
-	setAttr ".tgi[0].ni[10].y" -42.857143402099609;
-	setAttr ".tgi[0].ni[10].nvs" 1923;
-	setAttr ".tgi[0].ni[11].x" -84.285713195800781;
-	setAttr ".tgi[0].ni[11].y" 147.14285278320312;
-	setAttr ".tgi[0].ni[11].nvs" 2387;
-	setAttr ".tgi[0].ni[12].x" -217.14285278320312;
-	setAttr ".tgi[0].ni[12].y" -42.857143402099609;
-	setAttr ".tgi[0].ni[12].nvs" 1923;
-	setAttr ".tgi[0].ni[13].x" -232.85714721679688;
-	setAttr ".tgi[0].ni[13].y" 142.85714721679688;
-	setAttr ".tgi[0].ni[13].nvs" 2387;
-	setAttr ".tgi[0].ni[14].x" 90;
-	setAttr ".tgi[0].ni[14].y" -42.857143402099609;
-	setAttr ".tgi[0].ni[14].nvs" 1923;
-	setAttr ".tgi[0].ni[15].x" -237.14285278320312;
-	setAttr ".tgi[0].ni[15].y" 147.14285278320312;
-	setAttr ".tgi[0].ni[15].nvs" 2387;
-	setAttr ".tgi[0].ni[16].x" 115.71428680419922;
-	setAttr ".tgi[0].ni[16].y" 142.85714721679688;
-	setAttr ".tgi[0].ni[16].nvs" 1923;
 createNode shadingEngine -n "lambert1SG";
 	rename -uid "477A6798-44BC-0032-3913-8CBA46E3D177";
 	setAttr ".ihi" 0;
@@ -71116,6 +71085,75 @@ createNode polyPlane -n "polyPlane2";
 	setAttr ".sw" 1;
 	setAttr ".sh" 1;
 	setAttr ".cuv" 2;
+createNode lambert -n "background";
+	rename -uid "5FA5820F-445F-FF79-C881-DCB35895B47F";
+	setAttr ".c" -type "float3" 0.1691 0.1337 0.67199999 ;
+createNode shadingEngine -n "backgroundSG";
+	rename -uid "4E64B966-4C0B-1098-BEBD-F5ADBD09D408";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "materialInfo14";
+	rename -uid "DC733E99-48CB-CAC7-0309-D0B5B7FDE454";
+createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo";
+	rename -uid "ACDE81F0-409A-D713-126B-3F92EFAA15FA";
+	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
+	setAttr ".tgi[0].vl" -type "double2" -113.09523360123727 -418.09909294875899 ;
+	setAttr ".tgi[0].vh" -type "double2" 178.57142147563786 46.67053627943227 ;
+	setAttr -s 18 ".tgi[0].ni";
+	setAttr ".tgi[0].ni[0].x" 111.42857360839844;
+	setAttr ".tgi[0].ni[0].y" 147.14285278320312;
+	setAttr ".tgi[0].ni[0].nvs" 1923;
+	setAttr ".tgi[0].ni[1].x" 90;
+	setAttr ".tgi[0].ni[1].y" -42.857143402099609;
+	setAttr ".tgi[0].ni[1].nvs" 1923;
+	setAttr ".tgi[0].ni[2].x" -217.14285278320312;
+	setAttr ".tgi[0].ni[2].y" -42.857143402099609;
+	setAttr ".tgi[0].ni[2].nvs" 1923;
+	setAttr ".tgi[0].ni[3].x" -62.857143402099609;
+	setAttr ".tgi[0].ni[3].y" -42.857143402099609;
+	setAttr ".tgi[0].ni[3].nvs" 1923;
+	setAttr ".tgi[0].ni[4].x" -60;
+	setAttr ".tgi[0].ni[4].y" -45.714286804199219;
+	setAttr ".tgi[0].ni[4].nvs" 1923;
+	setAttr ".tgi[0].ni[5].x" 90;
+	setAttr ".tgi[0].ni[5].y" -42.857143402099609;
+	setAttr ".tgi[0].ni[5].nvs" 1923;
+	setAttr ".tgi[0].ni[6].x" -84.285713195800781;
+	setAttr ".tgi[0].ni[6].y" 147.14285278320312;
+	setAttr ".tgi[0].ni[6].nvs" 2387;
+	setAttr ".tgi[0].ni[7].x" 90;
+	setAttr ".tgi[0].ni[7].y" -42.857143402099609;
+	setAttr ".tgi[0].ni[7].nvs" 1923;
+	setAttr ".tgi[0].ni[8].x" -62.857143402099609;
+	setAttr ".tgi[0].ni[8].y" -42.857143402099609;
+	setAttr ".tgi[0].ni[8].nvs" 1923;
+	setAttr ".tgi[0].ni[9].x" 115.71428680419922;
+	setAttr ".tgi[0].ni[9].y" 142.85714721679688;
+	setAttr ".tgi[0].ni[9].nvs" 1923;
+	setAttr ".tgi[0].ni[10].x" -217.14285278320312;
+	setAttr ".tgi[0].ni[10].y" -42.857143402099609;
+	setAttr ".tgi[0].ni[10].nvs" 1923;
+	setAttr ".tgi[0].ni[11].x" -84.285713195800781;
+	setAttr ".tgi[0].ni[11].y" 147.14285278320312;
+	setAttr ".tgi[0].ni[11].nvs" 2387;
+	setAttr ".tgi[0].ni[12].x" -217.14285278320312;
+	setAttr ".tgi[0].ni[12].y" -42.857143402099609;
+	setAttr ".tgi[0].ni[12].nvs" 1923;
+	setAttr ".tgi[0].ni[13].x" 90;
+	setAttr ".tgi[0].ni[13].y" -42.857143402099609;
+	setAttr ".tgi[0].ni[13].nvs" 1923;
+	setAttr ".tgi[0].ni[14].x" -237.14285278320312;
+	setAttr ".tgi[0].ni[14].y" 147.14285278320312;
+	setAttr ".tgi[0].ni[14].nvs" 2387;
+	setAttr ".tgi[0].ni[15].x" -232.85714721679688;
+	setAttr ".tgi[0].ni[15].y" 142.85714721679688;
+	setAttr ".tgi[0].ni[15].nvs" 2387;
+	setAttr ".tgi[0].ni[16].x" -84.285713195800781;
+	setAttr ".tgi[0].ni[16].y" 147.14285278320312;
+	setAttr ".tgi[0].ni[16].nvs" 2387;
+	setAttr ".tgi[0].ni[17].x" -57.142856597900391;
+	setAttr ".tgi[0].ni[17].y" -117.14286041259766;
+	setAttr ".tgi[0].ni[17].nvs" 1923;
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -71127,14 +71165,15 @@ select -ne :hardwareRenderingGlobals;
 	setAttr ".fprt" yes;
 	setAttr ".rtfm" 1;
 select -ne :renderPartition;
-	setAttr -s 15 ".st";
+	setAttr -s 16 ".st";
 select -ne :renderGlobalsList1;
 select -ne :defaultShaderList1;
-	setAttr -s 16 ".s";
+	setAttr -s 17 ".s";
 select -ne :postProcessList1;
 	setAttr -s 2 ".p";
 select -ne :defaultRenderingList1;
 select -ne :lightList1;
+	setAttr -s 3 ".l";
 select -ne :standardSurface1;
 	setAttr ".bc" -type "float3" 0.40000001 0.40000001 0.40000001 ;
 	setAttr ".sr" 0.5;
@@ -71149,6 +71188,7 @@ select -ne :defaultRenderGlobals;
 select -ne :defaultResolution;
 	setAttr ".pa" 1;
 select -ne :defaultLightSet;
+	setAttr -s 3 ".dsm";
 select -ne :defaultColorMgtGlobals;
 	setAttr ".cfe" yes;
 	setAttr ".cfp" -type "string" "<MAYA_RESOURCES>/OCIO-configs/Maya2022-default/config.ocio";
@@ -71182,6 +71222,7 @@ relationship "link" ":lightLinker1" "mushroom_stem3SG.message" ":defaultLightSet
 relationship "link" ":lightLinker1" "leavesSG.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" "mushroom_cap_dotSG.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" "lambert1SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "backgroundSG.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" "lambert2SG.message" ":defaultLightSet.message";
@@ -71197,6 +71238,7 @@ relationship "shadowLink" ":lightLinker1" "mushroom_stem3SG.message" ":defaultLi
 relationship "shadowLink" ":lightLinker1" "leavesSG.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" "mushroom_cap_dotSG.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" "lambert1SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "backgroundSG.message" ":defaultLightSet.message";
 connectAttr "layerManager.dli[0]" "defaultLayer.id";
 connectAttr "renderLayerManager.rlmi[0]" "defaultRenderLayer.rlid";
 connectAttr ":defaultArnoldDenoiser.msg" ":defaultArnoldRenderOptions.imagers" -na
@@ -71338,40 +71380,6 @@ connectAttr "mushroom_dot18Shape.iog" "mushroom_cap_dotSG.dsm" -na;
 connectAttr "mushroom_dot19Shape.iog" "mushroom_cap_dotSG.dsm" -na;
 connectAttr "mushroom_cap_dotSG.msg" "materialInfo12.sg";
 connectAttr "mushroom_cap_dot.msg" "materialInfo12.m";
-connectAttr "tree_wood.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[0].dn"
-		;
-connectAttr "mushroom_stem3SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[1].dn"
-		;
-connectAttr "mushroom_cap3.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[2].dn"
-		;
-connectAttr "rock_tiles.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[3].dn"
-		;
-connectAttr "leaves.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[4].dn"
-		;
-connectAttr "standardSurface2SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[5].dn"
-		;
-connectAttr "lambert2SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[6].dn"
-		;
-connectAttr "grass.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[7].dn"
-		;
-connectAttr "bench_wood.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[8].dn"
-		;
-connectAttr "lamp_light.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[9].dn"
-		;
-connectAttr "lambert4SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[10].dn"
-		;
-connectAttr "lamp_part.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[11].dn"
-		;
-connectAttr "mushroom_stem3.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[12].dn"
-		;
-connectAttr "mushroom_cap_dot.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[13].dn"
-		;
-connectAttr "lambert3SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[14].dn"
-		;
-connectAttr "bench_parts.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[15].dn"
-		;
-connectAttr "mushroom_cap_dotSG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[16].dn"
-		;
 connectAttr ":lambert1.oc" "lambert1SG.ss";
 connectAttr "lambert1SG.msg" "materialInfo13.sg";
 connectAttr ":lambert1.msg" "materialInfo13.m";
@@ -71381,6 +71389,46 @@ connectAttr "lamp_baseShape.wm" "polyExtrudeFace1.mp";
 connectAttr "polyTweak1.out" "polyBevel1.ip";
 connectAttr "lamp_baseShape.wm" "polyBevel1.mp";
 connectAttr "polyExtrudeFace1.out" "polyTweak1.ip";
+connectAttr "background.oc" "backgroundSG.ss";
+connectAttr "pPlaneShape2.iog" "backgroundSG.dsm" -na;
+connectAttr "backgroundSG.msg" "materialInfo14.sg";
+connectAttr "background.msg" "materialInfo14.m";
+connectAttr "standardSurface2SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[0].dn"
+		;
+connectAttr "lambert3SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[1].dn"
+		;
+connectAttr "mushroom_stem3.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[2].dn"
+		;
+connectAttr "tree_wood.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[3].dn"
+		;
+connectAttr "leaves.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[4].dn"
+		;
+connectAttr "lambert2SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[5].dn"
+		;
+connectAttr "lamp_light.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[6].dn"
+		;
+connectAttr "mushroom_stem3SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[7].dn"
+		;
+connectAttr "grass.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[8].dn"
+		;
+connectAttr "mushroom_cap_dotSG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[9].dn"
+		;
+connectAttr "bench_wood.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[10].dn"
+		;
+connectAttr "mushroom_cap3.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[11].dn"
+		;
+connectAttr "rock_tiles.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[12].dn"
+		;
+connectAttr "lambert4SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[13].dn"
+		;
+connectAttr "bench_parts.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[14].dn"
+		;
+connectAttr "mushroom_cap_dot.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[15].dn"
+		;
+connectAttr "lamp_part.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[16].dn"
+		;
+connectAttr "backgroundSG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[17].dn"
+		;
 connectAttr "lambert2SG.pa" ":renderPartition.st" -na;
 connectAttr "lambert3SG.pa" ":renderPartition.st" -na;
 connectAttr "lambert4SG.pa" ":renderPartition.st" -na;
@@ -71394,6 +71442,7 @@ connectAttr "mushroom_stem3SG.pa" ":renderPartition.st" -na;
 connectAttr "leavesSG.pa" ":renderPartition.st" -na;
 connectAttr "mushroom_cap_dotSG.pa" ":renderPartition.st" -na;
 connectAttr "lambert1SG.pa" ":renderPartition.st" -na;
+connectAttr "backgroundSG.pa" ":renderPartition.st" -na;
 connectAttr "rock_tiles.msg" ":defaultShaderList1.s" -na;
 connectAttr "bench_wood.msg" ":defaultShaderList1.s" -na;
 connectAttr "bench_parts.msg" ":defaultShaderList1.s" -na;
@@ -71405,8 +71454,12 @@ connectAttr "mushroom_cap3.msg" ":defaultShaderList1.s" -na;
 connectAttr "mushroom_stem3.msg" ":defaultShaderList1.s" -na;
 connectAttr "leaves.msg" ":defaultShaderList1.s" -na;
 connectAttr "mushroom_cap_dot.msg" ":defaultShaderList1.s" -na;
+connectAttr "background.msg" ":defaultShaderList1.s" -na;
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "aiSkyDomeLightShape1.ltd" ":lightList1.l" -na;
-connectAttr "pPlaneShape2.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "areaLightShape1.ltd" ":lightList1.l" -na;
+connectAttr "pasted__areaLightShape1.ltd" ":lightList1.l" -na;
 connectAttr "aiSkyDomeLight1.iog" ":defaultLightSet.dsm" -na;
+connectAttr "areaLight1.iog" ":defaultLightSet.dsm" -na;
+connectAttr "pasted__areaLight1.iog" ":defaultLightSet.dsm" -na;
 // End of ParkSceneProject.ma
