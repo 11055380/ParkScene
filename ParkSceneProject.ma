@@ -1,6 +1,6 @@
 //Maya ASCII 2025ff03 scene
 //Name: ParkSceneProject.ma
-//Last modified: Sun, Oct 20, 2024 05:04:30 PM
+//Last modified: Sun, Oct 20, 2024 05:07:20 PM
 //Codeset: 1252
 requires maya "2025ff03";
 requires "stereoCamera" "10.0";
@@ -13,18 +13,18 @@ fileInfo "product" "Maya 2025";
 fileInfo "version" "2025";
 fileInfo "cutIdentifier" "202407121012-8ed02f4c99";
 fileInfo "osv" "Windows 10 Pro v2009 (Build: 19045)";
-fileInfo "UUID" "95D0F0CC-476A-0316-1D35-A1A646D43929";
+fileInfo "UUID" "FF989915-47E9-A761-F48C-3B93B411525A";
 createNode transform -s -n "persp";
 	rename -uid "63665CC3-42E8-E929-0AED-C9B1A872DC4D";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 3.8975783906457173 4.6642351004803801 5.7205295938738105 ;
-	setAttr ".r" -type "double3" 343.79999999969107 -319.99999999994048 0 ;
+	setAttr ".t" -type "double3" 14.913557340602543 9.9725819859208045 11.918244941269233 ;
+	setAttr ".r" -type "double3" 340.19999999968479 -309.5999999999309 -2.4948501567395624e-15 ;
 	setAttr ".rpt" -type "double3" 3.8472651086218976e-17 7.9555499310448436e-16 -1.1720243788801146e-16 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "EF24454A-4E60-159F-F3BE-BD8ED15DB738";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 8.7925787284743926;
+	setAttr ".coi" 21.699641577938138;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -70672,7 +70672,7 @@ createNode mesh -n "grass_stem19Shape" -p "grass_stem19";
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pPlane1";
 	rename -uid "80543E36-4CD9-1175-FBBE-298EC2B5C271";
-	setAttr ".t" -type "double3" -0.98544814190781294 0 2.1949438764113482 ;
+	setAttr ".t" -type "double3" -0.98544814190781294 -0.11323359821026401 2.1949438764113482 ;
 	setAttr ".r" -type "double3" 0 -15.409470294170191 0 ;
 	setAttr ".s" -type "double3" 1.3667794933747173 1 1.3667794933747173 ;
 	setAttr ".rp" -type "double3" -0.21219313144683838 0.26630108803510666 1.2131721675395966 ;
@@ -70724,7 +70724,7 @@ createNode camera -n "cameraShape1" -p "camera1";
 	setAttr ".man" -type "string" "camera1_mask";
 createNode transform -n "pPlane2";
 	rename -uid "1C8EA655-4046-0234-016E-8FB2AF1E1282";
-	setAttr ".t" -type "double3" -0.33884515188431585 0 -1.9534226898262528 ;
+	setAttr ".t" -type "double3" -0.33884515188431585 0.060249293869222509 -1.9534226898262528 ;
 createNode mesh -n "pPlaneShape2" -p "pPlane2";
 	rename -uid "1B43B75E-4156-24C5-6CD8-85BFEA98EFC6";
 	setAttr -k off ".v";
@@ -70772,8 +70772,8 @@ createNode pointLight -n "pointLightShape1" -p "pointLight1";
 	setAttr -k off ".v";
 	setAttr ".in" 10;
 	setAttr ".us" no;
-	setAttr ".ai_cast_shadows" no;
 	setAttr ".ai_exposure" 6.3636364936828613;
+	setAttr ".ai_radius" 3.701298713684082;
 createNode transform -n "group1";
 	rename -uid "E4793162-426B-D664-3AD0-E4BEC93A602A";
 	setAttr ".t" -type "double3" 9.8611861149355882 3.3480591881077846 6.1534241642611986 ;
