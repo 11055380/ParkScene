@@ -2,9 +2,9 @@
 
 Most Recent Update: 
 ----
-Lab 8: Outdoor Lighting & Render Scene
+Lab 9: An Object to UV Map
 --------------------------------------------
-![Screenshot (84)](https://github.com/user-attachments/assets/4f6836e7-04d4-43cc-a1b6-97d8ab73dc7a)
+![Screenshot (91)](https://github.com/user-attachments/assets/0559e6fe-7f40-460f-bb3b-4bd21c0348ea)
 
 --------
 **Progress**:
@@ -16,3 +16,5 @@ Lab 8: Outdoor Lighting & Render Scene
 ![Screenshot (69)](https://github.com/user-attachments/assets/1564cfd2-972d-4c3f-8c13-76d69aea752e)
 
 ![Screenshot (70)](https://github.com/user-attachments/assets/7eb16053-fc55-4236-9ea3-35d8a9e12b23)
+
+![Screenshot (84)](https://github.com/user-attachments/assets/4f6836e7-04d4-43cc-a1b6-97d8ab73dc7a)
