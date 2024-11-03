@@ -2,10 +2,9 @@
 
 Most Recent Update: 
 ----
-Lab 9: An Object to UV Map
+Challenge 9: 2 More Objects to UV Map
 --------------------------------------------
-![Screenshot (91)](https://github.com/user-attachments/assets/0559e6fe-7f40-460f-bb3b-4bd21c0348ea)
-
+![Screenshot 2024-11-03 142554](https://github.com/user-attachments/assets/4daff5ac-df72-4cd7-afaa-dce57e4bfbc5)
 --------
 **Progress**:
 -------
@@ -18,3 +17,5 @@ Lab 9: An Object to UV Map
 ![Screenshot (70)](https://github.com/user-attachments/assets/7eb16053-fc55-4236-9ea3-35d8a9e12b23)
 
 ![Screenshot (84)](https://github.com/user-attachments/assets/4f6836e7-04d4-43cc-a1b6-97d8ab73dc7a)
+
+![Screenshot (91)](https://github.com/user-attachments/assets/0559e6fe-7f40-460f-bb3b-4bd21c0348ea)
