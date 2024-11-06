@@ -2,9 +2,10 @@
 
 Most Recent Update: 
 ----
-Challenge 9: 2 More Objects to UV Map
+Lab 10: Surface Outfoor Environment
 --------------------------------------------
-![Screenshot 2024-11-03 142554](https://github.com/user-attachments/assets/4daff5ac-df72-4cd7-afaa-dce57e4bfbc5)
+![ParkScene Substance 2D Painter screenshot](https://github.com/user-attachments/assets/2dd10199-249e-4a0f-8e47-eb7a8af8cdf2)
+
 --------
 **Progress**:
 -------
@@ -19,3 +20,5 @@ Challenge 9: 2 More Objects to UV Map
 ![Screenshot (84)](https://github.com/user-attachments/assets/4f6836e7-04d4-43cc-a1b6-97d8ab73dc7a)
 
 ![Screenshot (91)](https://github.com/user-attachments/assets/0559e6fe-7f40-460f-bb3b-4bd21c0348ea)
+
+![Screenshot 2024-11-03 142554](https://github.com/user-attachments/assets/4daff5ac-df72-4cd7-afaa-dce57e4bfbc5)
