@@ -2,10 +2,9 @@
 
 Most Recent Update: 
 ----
-Lab 10: Surface Outfoor Environment
+Challenge 10: Export from Substance Painter & Import to Maya
 --------------------------------------------
-![ParkScene Substance 2D Painter screenshot](https://github.com/user-attachments/assets/2dd10199-249e-4a0f-8e47-eb7a8af8cdf2)
-
+![ParkScene textures applied screenshot](https://github.com/user-attachments/assets/3fea6e2a-82bb-4234-97ef-8af5a20e28ac)
 --------
 **Progress**:
 -------
@@ -22,3 +21,6 @@ Lab 10: Surface Outfoor Environment
 ![Screenshot (91)](https://github.com/user-attachments/assets/0559e6fe-7f40-460f-bb3b-4bd21c0348ea)
 
 ![Screenshot 2024-11-03 142554](https://github.com/user-attachments/assets/4daff5ac-df72-4cd7-afaa-dce57e4bfbc5)
+
+![ParkScene Substance 2D Painter screenshot](https://github.com/user-attachments/assets/2dd10199-249e-4a0f-8e47-eb7a8af8cdf2)
+
